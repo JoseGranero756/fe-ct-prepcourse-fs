@@ -23,14 +23,6 @@ function cuentaLetras(array,char) {
    return cuenta;
 }
 
-function letraRepetida(obj, char) {
-   for (letra in obj) {
-      if (char === letra) {
-         return false;
-      }
-   }
-   return true;
-}
 
 function numberOfCharacters(string) {
    // La función recibe un string. Debes recorrerlo y retornar un objeto donde cada propiedad es una de las
@@ -43,7 +35,7 @@ function numberOfCharacters(string) {
    var array = string.split("");
    array = array.sort();
    for (var char of array) {
-      if (letraRepetida(obj, char)) {
+      if (!(char in obj)) {
          obj[char] = cuentaLetras(array,char);
       };
    };
